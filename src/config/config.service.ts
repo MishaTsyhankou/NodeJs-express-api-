@@ -7,7 +7,7 @@ import { DotenvConfigOutput, DotenvParseOutput, config } from 'dotenv';
 
 @injectable()
 export class ConfigService implements IConfigService {
-	private config: DotenvParseOutput;
+	private config!: DotenvParseOutput;
 	constructor(@inject(TYPES.ILoggerService) private logger: ILogger) {
 		const result: DotenvConfigOutput = config();
 		if (result.error) {
